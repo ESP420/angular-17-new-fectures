@@ -1,1 +1,53 @@
-<p>control-flow works!</p>
+<section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="grid grid-cols-1 md:grid-cols-3  gap-1 mb-4">
+        <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
+            <p class="text-2xl font-bold">Control flow {{'@If'}}</p>
+            <p class="text-2xl text-info" [ngClass]="{'text-green-500': showContent(), 'text-red-500': !showContent()}">
+                {{showContent()}}</p>
+            <div>
+                <button type="button" class="border-2 rounded bg-blue-500 p-2 text-white"
+                    (click)="toggleContent()">click me!
+                </button>
+            </div>
+            @if (showContent()) {
+            <p class="text-purple-500">Enable all system turn On</p>
+            }@else{
+            <p class="text-cyan-500">Disabled all system Turn Off</p>
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
+            <p class="text-2xl font-bold">Control flow {{'@switch'}}</p>
+            <input type="text" class="block my-4 text-sm font-medium text-gray-900 dark:text-white" id="name" required
+                [(ngModel)]="note" (ngModelChange)="calculateNote(note)" type="number" name="value">
+            @switch (grade()) {
+            @case ('A') {
+            <p class="text-purple-500">Nivel Avanzado!</p><!-- arriba de 90 -->
+            }
+            @case ('B') {
+            <p class="text-yellow-500">Nivel Intermedio!</p><!-- arriba de 70 -->
+            }
+            @case ('C') {
+            <p class="text-green-500">Nivel Básico!</p><!-- abajo de 70 -->
+            }
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
+            <p class="text-2xl font-bold ">Control flow {{'@For'}}</p>
+            <ul>
+                @for (item of frameworks(); track i;let i =
+                $index,first=$first,last=$last,even=$even,count=$count,odd=$odd)
+                {
+                <li [class]="{
+                    'text-purple-500':even && !first && !last,
+                    'text-green-500':odd && !first && !last,
+                    'text-blue-500':first || last}">{{i+1}}/{{count}}- {{item}}</li>
+                }
+                @for (item of frameworksEmpty(); track $index) {}
+                @empty {
+                <li class="text-yellow-500">"Sin registro de frameworks"</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+</section>
