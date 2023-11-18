@@ -1,1 +1,120 @@
-<p>defer-views works!</p>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita nemo velit voluptatum eos cum qui maiores, dolores
+itaque molestias explicabo at fugiat, tempore quae. Voluptatum ea beatae voluptate est maiores.
+Quam et dolore autem quibusdam exercitationem labore obcaecati vel placeat quaerat. Cum deleniti animi ad omnis iure,
+autem natus doloremque distinctio quos quidem dolor tempora minima atque laboriosam impedit ipsa!
+Obcaecati illo vitae voluptatum. Numquam officia rerum fuga aliquam quae, dolorem laborum soluta velit error repellat
+ipsa dolorum esse ipsam expedita sequi voluptate, ex tenetur sint praesentium ad doloremque voluptas!
+Iste autem quo asperiores dolore odio quibusdam ea perspiciatis doloribus praesentium beatae? Qui numquam ducimus
+dolorem illum debitis, aliquid natus, autem sint molestiae iure, laborum optio eius itaque ab vero.
+Exercitationem harum sed atque placeat esse cumque rerum ipsa! Optio, commodi dignissimos ab aliquid ut excepturi, velit
+sint distinctio veritatis quisquam saepe asperiores, sapiente adipisci dolorum possimus repellendus quibusdam! Quia.
+Ipsa, excepturi provident dolorum quos similique molestiae ullam sapiente dicta, suscipit omnis amet distinctio incidunt
+nulla totam accusantium cumque, dolorem quisquam laborum itaque velit perferendis eveniet! Fugit similique amet at.
+Quisquam repudiandae quo molestiae laudantium quis maiores, reiciendis animi omnis deserunt blanditiis commodi
+aspernatur quas exercitationem impedit explicabo provident nulla voluptatum cupiditate repellat perspiciatis! Eius
+nostrum ea similique fugiat inventore!
+Cumque aliquam, inventore hic, ratione consequatur officia tempore ea exercitationem similique totam eveniet quam
+sapiente unde. Iure atque sit consectetur sed quos assumenda. Placeat consectetur reprehenderit laboriosam maxime
+deleniti saepe!
+Fugiat incidunt cumque a, voluptatibus fugit suscipit animi eum ipsa laboriosam recusandae, sit esse distinctio voluptas
+nulla ipsum consequuntur atque dolor ea dolorem porro! Maxime, ipsa quos. Libero, provident sed?
+Aliquam quis, laboriosam eaque assumenda illo eos cupiditate praesentium, voluptatibus voluptates, numquam ullam
+reiciendis tempora quo! Blanditiis aspernatur saepe, error illo sapiente, nesciunt distinctio nemo, corporis fugit
+voluptatum eaque quam?
+Laudantium, dolores. Minima assumenda aspernatur illo impedit libero. Dolor assumenda cumque nihil dicta officiis,
+tenetur repellendus recusandae rerum animi nesciunt unde, tempore dolorem quae iure, temporibus odit totam cupiditate
+molestias.
+Voluptates animi recusandae explicabo quidem quaerat repudiandae nisi quasi id soluta dolor asperiores alias aut
+molestias esse vel porro adipisci ipsum est illo nemo mollitia totam, sunt officiis. Nostrum, ipsam?
+Expedita itaque harum sequi nobis vitae officiis cumque maiores dolore dolorem obcaecati laudantium voluptatem tempora,
+numquam similique quis nemo qui enim? Iusto cum cumque sed, tempora iure ratione quibusdam veritatis.
+Id eligendi at qui aspernatur aliquam dicta ipsum commodi itaque excepturi libero ducimus, nemo ullam nesciunt dolorem
+praesentium! In aut sequi hic quam inventore consectetur animi porro perferendis ratione enim?
+Blanditiis consequuntur ex quis quod itaque rem eaque temporibus illo ipsa sit nemo excepturi voluptates asperiores,
+ullam inventore quas rerum at quidem ad? Error, sed provident! Laborum necessitatibus ipsa voluptate.
+Nostrum consequuntur, praesentium, asperiores voluptas dolorem mollitia repellat illo quidem, expedita dignissimos
+dolore odit quasi nobis? Natus blanditiis officiis consequatur dolore tempore commodi omnis! Voluptas odio quaerat autem
+ad quisquam.
+Est nobis voluptates nesciunt asperiores perferendis eligendi quaerat qui culpa quo unde temporibus doloremque doloribus
+quam quasi, nisi commodi ea consectetur. Facere recusandae ab, in eos qui molestias voluptates molestiae.
+Nulla vitae nostrum reprehenderit eos repudiandae aliquam necessitatibus deleniti modi quos. Eligendi facilis unde vel
+et quasi, quia molestias eveniet dolorem. Quia voluptatum natus, quod provident perferendis inventore magni ab?
+Possimus nostrum natus vitae repudiandae exercitationem doloribus ipsum, dignissimos porro ratione laudantium odit optio
+dolore ut pariatur enim harum, quia eveniet repellendus. Impedit incidunt a dolore. Minus quibusdam voluptate eos.
+Excepturi assumenda placeat esse, ad ipsam, architecto odit quia consequuntur officia molestias amet tempora perferendis
+debitis. Modi doloremque, ad sunt dignissimos adipisci laborum eius non sequi exercitationem tempora saepe facilis!
+<div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="flex items-center justify-center h-24 rounded bg-gray-50">
+
+            @defer (on viewport) {
+            <app-title title="loading" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center h-24 rounded bg-gray-50">
+
+            @defer (on hover) {
+            <app-title title="over " />
+            }@placeholder () {
+            <p>Over me!</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center h-24 rounded bg-gray-50">
+            <div><button type="button" class="p-1 border rounded text-white bg-blue-500" #show>show</button></div>
+            @defer (on interaction(show)) {
+            <app-title title="on interaction" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center h-24 rounded bg-gray-50">
+
+            @defer (on timer(3s)) {
+            <app-title title="on timer" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center h-24 rounded bg-gray-50">
+
+            @defer (on interaction; prefetch on idle) {
+            <app-title title="prefetch on idle" />
+            }@placeholder {
+            <p>future title</p>
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center h-24 rounded bg-gray-50">
+            <div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" [(ngModel)]="cond" name="cond"
+                        (click)="changeCondition()">
+                    <div
+                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                    </div>
+                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+                </label>
+            </div>
+
+        </div>
+        <div class="flex flex-col items-center justify-center h-24 rounded bg-gray-50">
+
+            @defer (when cond) {
+            <app-title title="whit condition" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+    </div>
+</div>
