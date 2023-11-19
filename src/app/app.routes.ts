@@ -8,43 +8,44 @@ export const routes: Routes = [{
             path: 'change-detection',
             title: 'Change Detection',
             loadComponent: () => import('./dashboard/pages/changes-detection/changes-detection.component'),
-
+            data: { animation: 'openClosePage' }
         },
         {
             path: 'control-flow',
             title: 'Control Flow',
             loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component'),
+            data: { animation: 'statusPage' }
 
         },
         {
             path: 'defer-options',
             title: 'Defer Options',
             loadComponent: () => import('./dashboard/pages/defer-options/defer-options.component'),
-
+            data: { animation: 'togglePage' }
         },
         {
             path: 'defer-views',
             title: 'Defer views',
             loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),
-
+            data: { animation: 'filterPage' }
         },
         {
             path: 'user/:id',
             title: 'user',
             loadComponent: () => import('./dashboard/pages/user/user.component'),
-
+            data: { animation: 'heroGroupPage' }
         },
         {
             path: 'user-list',
             title: 'User list',
             loadComponent: () => import('./dashboard/pages/users/users.component'),
-
+            data: { animation: 'enterLeavePage' }
         },
         {
             path: 'view-transition',
             title: 'View Transition',
             loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component'),
-
+            data: { animation: 'autoPage' }
         },
         {
             path: '',

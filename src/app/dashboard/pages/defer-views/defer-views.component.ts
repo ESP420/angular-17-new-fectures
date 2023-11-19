@@ -11,10 +11,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './defer-views.component.css'
 })
 export default class DeferViewsComponent {
-  public cond: boolean = false;
-  public changeCondition() {
-    this.cond = !this.cond;
-    console.log(this.cond);
-  }
+
 
 }

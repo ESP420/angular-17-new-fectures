@@ -1,7 +1,9 @@
 <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <app-title title="Control flow" withShadows />
+    <app-title title="Control flow" />
     <div class="grid grid-cols-1 md:grid-cols-3  gap-1 mb-4">
         <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
-            <p class="text-2xl font-bold">Control flow {{'@If'}}</p>
+            <p class="text-2xl font-bold">{{'@If'}}</p>
             <p class="text-2xl text-info" [ngClass]="{'text-green-500': showContent(), 'text-red-500': !showContent()}">
                 {{showContent()}}</p>
             <div>
@@ -16,7 +18,7 @@
             }
         </div>
         <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
-            <p class="text-2xl font-bold">Control flow {{'@switch'}}</p>
+            <p class="text-2xl font-bold">{{'@switch'}}</p>
             <input type="text" class="block my-4 text-sm font-medium text-gray-900 dark:text-white" id="name" required
                 [(ngModel)]="note" (ngModelChange)="calculateNote(note)" type="number" name="value">
             @switch (grade()) {
@@ -32,7 +34,7 @@
             }
         </div>
         <div class="flex flex-col items-center justify-center p-2 rounded bg-gray-200 dark:bg-gray-800"><!-- h-25 -->
-            <p class="text-2xl font-bold ">Control flow {{'@For'}}</p>
+            <p class="text-2xl font-bold ">{{'@For'}}</p>
             <ul>
                 @for (item of frameworks(); track i;let i =
                 $index,first=$first,last=$last,even=$even,count=$count,odd=$odd)

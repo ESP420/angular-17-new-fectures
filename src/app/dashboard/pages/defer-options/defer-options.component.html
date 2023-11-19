@@ -1,1 +1,70 @@
-<p>defer-options works!</p>
+<div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="flex items-center justify-center  rounded bg-gray-50">
+
+            @defer (on viewport) {
+            <app-title title="loading" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center  rounded bg-gray-50">
+
+            @defer (on hover) {
+            <app-title title="over " />
+            }@placeholder () {
+            <p>Over me!</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center  rounded bg-gray-50">
+            <div><button type="button" class="p-1 border rounded text-white bg-blue-500" #show>show</button></div>
+            @defer (on interaction(show)) {
+            <app-title title="interaction" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center  rounded bg-gray-50">
+
+            @defer (on timer(3s)) {
+            <app-title title="timer" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+        <div class="flex items-center justify-center  rounded bg-gray-50">
+
+            @defer (on interaction; prefetch on idle) {
+            <app-title title="prefetch on idle" />
+            }@placeholder {
+            <p>future title</p>
+            }
+        </div>
+        <div class="flex flex-col items-center justify-center  rounded bg-gray-50">
+            <div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" name="cond" (click)="changeCondition()">
+                    <div
+                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                    </div>
+                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+                </label>
+            </div>
+            @defer (when condition()) {
+            <app-title title="whit condition" />
+            }@placeholder {
+            <p>future title</p>
+            }@loading(minimum 2s) {
+            Loading...
+            }
+        </div>
+    </div>
+</div>
