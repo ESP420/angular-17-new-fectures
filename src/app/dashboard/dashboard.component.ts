@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SidemenuComponent } from '@shared';
 
 import { initFlowbite } from 'flowbite';
-import { SidemenuComponent } from '../shared/sidemenu/sidemenu.component';
 
 @Component({
   standalone: true,
