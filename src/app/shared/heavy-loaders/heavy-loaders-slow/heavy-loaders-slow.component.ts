@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './heavy-loaders-slow.component.css'
 })
 export class HeavyLoadersSlowComponent {
-
+  @Input({ required: true }) cssClass!: string;
+  constructor() {
+    const start = Date.now();
+    while (Date.now() - start < 3000) { /* Do nothing */ }
+    console.log('Cargando');
+  }
 }

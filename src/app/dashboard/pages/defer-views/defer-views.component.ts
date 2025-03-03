@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from '@shared';
+import { HeavyLoadersSlowComponent } from '@shared';
 import { FormsModule } from '@angular/forms';
+import { TitleComponent } from "@shared";
 
 @Component({
   selector: 'app-defer-views',
   standalone: true,
-  imports: [CommonModule, TitleComponent, FormsModule],
+  imports: [CommonModule, HeavyLoadersSlowComponent, FormsModule, TitleComponent],
   templateUrl: './defer-views.component.html',
   styleUrl: './defer-views.component.css'
 })
