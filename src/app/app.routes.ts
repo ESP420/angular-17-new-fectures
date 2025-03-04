@@ -42,10 +42,16 @@ export const routes: Routes = [{
             data: { animation: 'enterLeavePage' }
         },
         {
-            path: 'view-transition',
-            title: 'View Transition',
+            path: 'view-transition-1',
+            title: 'View Transition 1',
             loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component'),
             data: { animation: 'autoPage' }
+        },
+        {
+            path: 'view-transition-2',
+            title: 'View Transition 2',
+            loadComponent: () => import('./dashboard/pages/view-transition/view-transition-2.component'),
+            data: { animation: 'enterLeavePage' }
         },
         {
             path: '',
