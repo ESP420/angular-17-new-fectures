@@ -5,6 +5,12 @@
     "paths": {
       "@shared": [
         "./src/app/shared/index"
+      ],
+      "@services/*": [
+        "./src/app/services/*"
+      ],
+      "@interfaces/*": [
+        "./src/app/interfaces/*"
       ]
     },
     "outDir": "./dist/out-tsc",
